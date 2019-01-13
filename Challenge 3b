@@ -1,0 +1,73 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    int x;
+    int y;
+    cout<<" This is a card picking game.\n";
+    x = (1 + (rand() % 13));
+    switch (x)
+    {
+    case 1:
+        cout << "Your cards rank is Ace.\n ";
+    break;
+    case 2:
+        cout << "Your cards rank is 2.\n ";
+    break;
+    case 3:
+        cout << "Your cards rank is 3.\n ";
+    break;
+     case 4:
+        cout << "Your cards rank is 4.\n ";
+    break;
+    case 5:
+        cout << "Your cards rank is 5.\n ";
+    break;
+    case 6:
+        cout << "Your cards rank is 6.\n ";
+    break;
+    case 7:
+        cout << "Your cards rank is 7.\n ";
+    break;
+    case 8:
+        cout << "Your cards rank is 8.\n ";
+    break;
+    case 9:
+        cout << "Your cards rank is 9.\n ";
+    break;
+    case 10:
+        cout << "Your cards rank is 10.\n ";
+    break;
+    case 11:
+        cout << "Your cards rank is Jack.\n ";
+    break;
+    case 12:
+        cout << "Your cards rank is Queen.\n ";
+    break;
+    case 13:
+        cout << "Your cards rank is King.\n ";
+    break;
+    }
+    y = 1+(rand()%4);
+    switch (y)
+    {
+    case 1:
+        cout << "Your cards suit is Diamonds.\n ";
+    break;
+    case 2:
+        cout << "Your cards rank is Spades.\n ";
+    break;
+    case 3:
+        cout << "Your cards rank is Hearts.\n ";
+    break;
+    case 4:
+        cout << "Your cards rank is Spades.\n ";
+    break;
+    }
+
+    return 0;
+
+}
