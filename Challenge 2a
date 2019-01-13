@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double temperature_value;
+    string unit;
+    cout<<"Please enter the temperature.\n";
+    cin>>temperature_value;
+    cout<<"What unit is this in?\n";
+    cout<<" 1. Farenheit "<< endl;
+    cout<<" 2. Celsius "<<endl;
+    cin>>unit;
+    if (unit=="Farenheit")
+    {
+        if (temperature_value > 212)
+        {
+            cout<<"Too hot youre going to die.\n";
+        }
+        else if (temperature_value<86)
+                 {
+                     cout<<"Too cold youre going to need some warm clothes.\n";
+                 }
+        else
+                {
+                    cout<<"Just right.\n";
+                }
+
+    }
+    else if (unit == "celsius")
+    {
+         if (temperature_value > 100)
+        {
+            cout<<"Too hot youre going to die.\n";
+        }
+        else if (temperature_value<30)
+                 {
+                     cout<<"Too cold youre going to need some warm clothes.\n";
+                 }
+        else
+                {
+                    cout<<"Just right.\n";
+                }
+    }
+    else
+    {
+        cout<< " I gave you two options, you buggin.\n";
+    }
+
+    return 0;
+
+}
