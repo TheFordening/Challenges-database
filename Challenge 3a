@@ -1,0 +1,32 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double pointX;
+    double pointY;
+    int radius = 10;
+    double distancesquared;
+    int x;
+    cout<<"Please enter the X distance.\n";
+    cin>>pointX;
+    cout<<"Please enter the Y distance.\n";
+    cin>>pointY;
+    distancesquared = (pointX*pointX) + (pointY*pointY);
+    x = radius * radius;
+    if (distancesquared<x)
+    {
+        cout<< " The point is inside the circle.\n";
+    }
+    else if (distancesquared == x)
+    {
+        cout<< " The point is on the circle.\n";
+    }
+    else
+    {
+        cout<<" The point is outside the circle.\n";
+    }
+    return 0;
+
+}
