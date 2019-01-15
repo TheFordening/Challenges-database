@@ -1,0 +1,23 @@
+
+#include <iostream> // when summing ANYTHING , let the original value be equal to 0, and use the compound operators!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#include <cmath>
+#include <string>
+using namespace std;
+int main()
+{
+    double e = 1;
+    double item = 1;
+    int b;
+    cout << "Please enter a value between 10000 and 100000. Use 10000 increments.\n";
+    cin >> b;
+    for(double i = 1; i<=b; i++)
+    {
+        item /= i;
+        e += item;
+        if ( i == b)
+        {
+            cout<< e << cout;
+        }
+    }
+    return 0;
+}
