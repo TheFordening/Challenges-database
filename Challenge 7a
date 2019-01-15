@@ -1,0 +1,25 @@
+
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+
+//add iomanip library to change widht of text
+
+int main()
+{
+    double x = 0 ;
+    int b;
+    cout << "Please enter a value to calculate pi with, preferably from 10000 to 100000 with 10000 increments.\n";
+    cin >> b;
+    for(double i=1;i<=b; i++)
+    {
+        x += (pow(-1,(i+1)))/(2*i - 1);
+        if ( i == b )
+        {
+            double y = 4*x;
+            cout << y;
+        }
+    }
+    return 0;
+}// when summing a series, let the original value be equal to 0.
