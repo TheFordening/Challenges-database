@@ -1,0 +1,485 @@
+
+#include <iostream>
+#include <cmath>
+#include <string> // Enables .lenght, .compare( used like stringname.compare(string 1, string 2...),
+using namespace std;
+
+//add iomanip library to change widht of text
+int main()
+{
+     for(int i=1; i<=8; i++)
+     {
+         switch (i)
+         {
+            case (1):
+                cout<<"                           "<<1<<endl;
+                break;
+            case (2):
+                for (int j=0;j<=2;j++)
+                {
+                    cout<<"           ";
+                    if (j==2)
+                    {
+                        cout<<"  "<<pow(2,(j-2));
+                        continue;
+                    }
+                    cout<<"  "<<pow(2,j);
+                }
+                break;
+                case(3):
+                    cout<<endl;
+                    for (int j = 0; j<=4;j++)
+                    {
+                        cout<<"      ";
+                        if (j==3)
+                        {
+                            for(int k = 0;k <=2;(k++))
+                            {
+                                if (k==0||k==1)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-k));
+                                }
+                            }
+                        }
+                        else if(j==4)
+                        {
+                            for(int l = 0;l <=4;(l++))
+                            {
+                                if (l<4)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-l));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            cout<<"  "<<pow(2,j);
+                        }
+                    }
+                break;
+                 case(4):
+                    cout<<endl;
+                    for (int j = 0; j<=6;j++)
+                    {
+                          cout<<"    ";
+                        if (j==4)
+                        {
+                            for(int k = 0;k <=2;(k++))
+                            {
+                                if (k==0||k==1)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-k));
+                                }
+                            }
+                        }
+                        else if(j==5)
+                        {
+                            for(int l = 0;l <=4;(l++))
+                            {
+                                if (l<4)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-l));
+                                }
+                            }
+
+
+                        }
+                        else if (j==6)
+                        {
+                            for(int m =0; m<=6;m++)
+                            {
+                                if(m<6)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            cout<<"  "<<pow(2,j);
+                        }
+                    }
+                    break;
+                    case(5):
+                    cout<<endl;
+                    for (int j = 0; j<=8;j++)
+                    {
+                        cout<<"  ";
+                        if (j==5)
+                        {
+                            for(int k = 0;k <=2;(k++))
+                            {
+                                if (k==0||k==1)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"   "<<pow(2,(j-k));
+                                }
+                            }
+                        }
+                        else if(j==6)
+                        {
+                            for(int l = 0;l <=4;(l++))
+                            {
+                                if (l<4)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"   "<<pow(2,(j-l));
+                                }
+                            }
+
+
+                        }
+                        else if (j==7)
+                        {
+                            for(int m =0; m<=6;m++)
+                            {
+                                if(m<6)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"    "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                         else if (j==8)
+                        {
+                            for(int m =0; m<=8;m++)
+                            {
+                                if(m<8)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"   "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            cout<<"  "<<pow(2,j);
+                        }
+                    }
+                    break;
+                    case(6):
+                    cout<<endl;
+                    for (int j = 0; j<=10;j++)
+                    {
+                        cout<<" ";
+                        if (j==6)
+                        {
+                            for(int k = 0;k <=2;(k++))
+                            {
+                                if (k==0||k==1)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-k));
+                                }
+                            }
+                        }
+                        else if(j==7)
+                        {
+                            for(int l = 0;l <=4;(l++))
+                            {
+                                if (l<4)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-l));
+                                }
+                            }
+
+
+                        }
+                        else if (j==8)
+                        {
+                            for(int m =0; m<=6;m++)
+                            {
+                                if(m<6)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                         else if (j==9)
+                        {
+                            for(int m =0; m<=8;m++)
+                            {
+                                if(m<8)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else if (j==10)
+                        {
+                            for(int m =0; m<=10;m++)
+                            {
+                                if(m<10)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            cout<<"  "<<pow(2,j);
+                        }
+                    }
+                    break;
+                    case(7):
+                    cout<<endl;
+                    for (int j = 0; j<=12;j++)
+                    {
+                        cout<<" ";
+                        if (j==7)
+                        {
+                            for(int k = 0;k <=2;(k++))
+                            {
+                                if (k==0||k==1)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-k));
+                                }
+                            }
+                        }
+                        else if(j==8)
+                        {
+                            for(int l = 0;l <=4;(l++))
+                            {
+                                if (l<4)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-l));
+                                }
+                            }
+
+
+                        }
+                        else if (j==9)
+                        {
+                            for(int m =0; m<=6;m++)
+                            {
+                                if(m<6)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                         else if (j==10)
+                        {
+                            for(int m =0; m<=8;m++)
+                            {
+                                if(m<8)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else if (j==11)
+                        {
+                            for(int m =0; m<=10;m++)
+                            {
+                                if(m<10)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else if (j==12)
+                        {
+                            for(int m =0; m<=12;m++)
+                            {
+                                if(m<12)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            cout<<"  "<<pow(2,j);
+                        }
+                    }
+                    break;
+                    case(8):
+                    cout<<endl;
+                    for (int j = 0; j<=14;j++)
+                    {
+                        if (j==8)
+                        {
+                            for(int k = 0;k <=2;(k++))
+                            {
+                                if (k==0||k==1)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-k));
+                                }
+                            }
+                        }
+                        else if(j==9)
+                        {
+                            for(int l = 0;l <=4;(l++))
+                            {
+                                if (l<4)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-l));
+                                }
+                            }
+
+
+                        }
+                        else if (j==10)
+                        {
+                            for(int m =0; m<=6;m++)
+                            {
+                                if(m<6)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                         else if (j==11)
+                        {
+                            for(int m =0; m<=8;m++)
+                            {
+                                if(m<8)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else if (j==12)
+                        {
+                            for(int m =0; m<=10;m++)
+                            {
+                                if(m<10)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else if (j==13)
+                        {
+                            for(int m =0; m<=12;m++)
+                            {
+                                if(m<12)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                         else if (j==14)
+                        {
+                            for(int m =0; m<=14;m++)
+                            {
+                                if(m<14)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    cout<<"  "<<pow(2,(j-m));
+                                }
+                            }
+                        }
+                        else
+                        {
+                            cout<<"  "<<pow(2,j);
+                        }
+                    }
+                    break;
+            }
+     }
+     return 0;
+}
