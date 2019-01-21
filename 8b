@@ -1,0 +1,485 @@
+#include <iostream> // when summing ANYTHING , let the original value be equal to 0, and use the compound operators!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#include <cmath>
+#include <string>
+using namespace std;
+void daysolve( int x)
+{
+    switch (x)
+    {
+        case 0:
+        cout << "The first day  is Saturday"<< endl;
+        break;
+        case 1:
+        cout << "The first day  is Sunday.\n";
+        break;
+        case 2:
+        cout << "The first day is Monday.\n";
+        break;
+        case 3:
+        cout << "The first day is Tuesday.\n";
+        break;
+        case 4:
+        cout << "The first day is Wednesday.\n";
+        break;
+        case 5:
+        cout << "The first day is Thursday.\n";
+        break;
+        case 6:
+        cout << "The first day is Friday.\n";
+        break;
+        case 7:
+        cout<< "The first day  is Saturday.\n";
+        break;
+        default:
+        cout<< "You may have made an error, please reenter your info.\n";
+    }
+}
+int main()
+{
+int year;
+int day;
+int b,c,d,e,f,g,h,j,k,l,m;
+int month1,month2,month3,month4,month5,month6,month7,month8,month9,month10,month11,month12;
+cout << "Please enter the first date of the year, 0 being saturday, 6 days.\n";
+cin >> day;
+cout << endl << "Please enter the year.\n";
+cin >> year;
+if ((year%4 == 0))
+{
+            for ( int i = 1; i <=12; i++)
+            {
+                if (i==1)
+                {
+                    month1 = day;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month1 >= 6)
+                        {
+                            month1 = 0;
+                            continue;
+                        }
+                        if ( a == 1)
+                        {
+                            continue;
+                        }
+                        month1 ++;
+                    }
+
+                }
+                if (i==2)
+                {
+                    month2 = month1;
+                    for (int a = 1; a <= 29; a++)
+                    {
+                        if(month2 >= 6)
+                        {
+                            month2 = 0;
+                            continue;
+                        }
+                        if ( a == 1)
+                        {
+                            continue;
+                        }
+                        month2 ++;
+
+                    }
+
+                }
+                if (i==3)
+                {
+                    b = month2 + 1;
+                    month3 = month2;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month3 >= 6)
+                        {
+                            month3 = 0;
+                            continue;
+                        }
+                        month3 ++;
+
+                    }
+
+                }
+                if (i==4)
+                {
+                    c= month3 + 1;
+                    month4 = month3;
+                    for (int a = 1; a <= 30; a++)
+                    {
+                        if(month4 >= 6)
+                        {
+                            month4 = 0;
+                            continue;
+                        }
+                        month4 ++;
+
+                    }
+
+                }
+                if (i==5)
+                {
+                    d = month4 + 1;
+                    month5 = month4;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month5 >= 6)
+                        {
+                            month5 = 0;
+                            continue;
+                        }
+                        month5 ++;
+
+                    }
+
+                }
+                if (i==6)
+                {
+                    e = month5 + 1;
+                    month6 = month5;
+                    for (int a = 1; a <= 30; a++)
+                    {
+                        if(month6 >= 6)
+                        {
+                            month6 = 0;
+                            continue;
+                        }
+                        month6 ++;
+                    }
+
+                }
+                if (i==7)
+                {
+                    f = month6 + 1;
+                    month7 = month6;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month7 >= 6)
+                        {
+                            month7 = 0;
+                            continue;
+                        }
+                        month7 ++;
+                    }
+
+                }
+                if (i==8)
+                {
+                    g = month7 + 1;
+                    month8 = month7;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month8 >= 6)
+                        {
+                            month8 = 0;
+                            continue;
+                        }
+                        month8 ++;
+                    }
+
+                }
+                if (i==9)
+                {
+                    h = month8 + 1;
+                    month9 = month8;
+                    for (int a = 1; a <= 30; a++)
+                    {
+                        if(month9 >= 6)
+                        {
+                            month9 = 0;
+                            continue;
+                        }
+                        month9 ++;
+                    }
+
+                }
+                if (i==10)
+                {
+                    j = month9 + 1;
+                    month10 = month9;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month10 >= 6)
+                        {
+                            month10 = 0;
+                            continue;
+                        }
+                        month10 ++;
+                    }
+
+                }
+                if (i==11)
+                {
+                    k = month10 + 1;
+                    month11 = month10;
+                    for (int a = 1; a <= 30; a++)
+                    {
+                        if(month11 >= 6)
+                        {
+                            month11 = 0;
+                            continue;
+                        }
+                        month11 ++;
+                    }
+
+                }
+                if (i==12)
+                {
+                    l = month11 + 1;
+                    month12 = month11;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month12 >= 6)
+                        {
+                            month12 = 0;
+                            continue;
+                        }
+                        if ( a == 1)
+                        {
+                            continue;
+                        }
+                        month12 ++;
+                    }
+
+                }
+            }
+}
+else
+{
+                     for ( int i = 1; i <=12; i++)
+            {
+                if (i==1)
+                {
+                    month1 = day;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month1 >= 6)
+                        {
+                            month1 = 0;
+                            continue;
+                        }
+                        if ( a == 1)
+                        {
+                            continue;
+                        }
+                        month1 ++;
+                    }
+
+                }
+                if (i==2)
+                {
+                    month2 = month1;
+                    for (int a = 1; a <= 29; a++)
+                    {
+                        if(month2 >= 6)
+                        {
+                            month2 = 0;
+                            continue;
+                        }
+                        if ( a == 1)
+                        {
+                            continue;
+                        }
+                        month2 ++;
+
+                    }
+
+                }
+                if (i==3)
+                {
+                    b = month2 + 1;
+                    month3 = month2;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month3 >= 6)
+                        {
+                            month3 = 0;
+                            continue;
+                        }
+                        month3 ++;
+
+                    }
+
+                }
+                if (i==4)
+                {
+                    c= month3 + 1;
+                    month4 = month3;
+                    for (int a = 1; a <= 30; a++)
+                    {
+                        if(month4 >= 6)
+                        {
+                            month4 = 0;
+                            continue;
+                        }
+                        month4 ++;
+
+                    }
+
+                }
+                if (i==5)
+                {
+                    d = month4 + 1;
+                    month5 = month4;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month5 >= 6)
+                        {
+                            month5 = 0;
+                            continue;
+                        }
+                        month5 ++;
+
+                    }
+
+                }
+                if (i==6)
+                {
+                    e = month5 + 1;
+                    month6 = month5;
+                    for (int a = 1; a <= 30; a++)
+                    {
+                        if(month6 >= 6)
+                        {
+                            month6 = 0;
+                            continue;
+                        }
+                        month6 ++;
+                    }
+
+                }
+                if (i==7)
+                {
+                    f = month6 + 1;
+                    month7 = month6;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month7 >= 6)
+                        {
+                            month7 = 0;
+                            continue;
+                        }
+                        month7 ++;
+                    }
+
+                }
+                if (i==8)
+                {
+                    g = month7 + 1;
+                    month8 = month7;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month8 >= 6)
+                        {
+                            month8 = 0;
+                            continue;
+                        }
+                        month8 ++;
+                    }
+
+                }
+                if (i==9)
+                {
+                    h = month8 + 1;
+                    month9 = month8;
+                    for (int a = 1; a <= 30; a++)
+                    {
+                        if(month9 >= 6)
+                        {
+                            month9 = 0;
+                            continue;
+                        }
+                        month9 ++;
+                    }
+
+                }
+                if (i==10)
+                {
+                    j = month9 + 1;
+                    month10 = month9;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month10 >= 6)
+                        {
+                            month10 = 0;
+                            continue;
+                        }
+                        month10 ++;
+                    }
+
+                }
+                if (i==11)
+                {
+                    k = month10 + 1;
+                    month11 = month10;
+                    for (int a = 1; a <= 30; a++)
+                    {
+                        if(month11 >= 6)
+                        {
+                            month11 = 0;
+                            continue;
+                        }
+                        month11 ++;
+                    }
+
+                }
+                if (i==12)
+                {
+                    l = month11 + 1;
+                    month12 = month11;
+                    for (int a = 1; a <= 31; a++)
+                    {
+                        if(month12 >= 6)
+                        {
+                            month12 = 0;
+                            continue;
+                        }
+                        if ( a == 1)
+                        {
+                            continue;
+                        }
+                        month12 ++;
+                    }
+
+                }
+            }
+}
+
+cout << "For January....\n";
+daysolve(day);
+cout << endl;
+cout << "For Febuary....\n";
+daysolve(month1);
+cout << endl;
+cout << "For March....\n";
+daysolve(b);
+cout << endl;
+cout << "For April....\n";
+daysolve(c);
+cout << endl;
+cout << "For May....\n";
+daysolve(d);
+cout << endl;
+cout << "For June....\n";
+daysolve(e);
+cout << endl;
+cout << "For July....\n";
+daysolve(f);
+cout << endl;
+cout << "For August....\n";
+daysolve(g);
+cout << endl;
+cout << "For September....\n";
+daysolve(h);
+cout << endl;
+cout << "For October....\n";
+daysolve(j);
+cout << endl;
+cout << "For November....\n";
+daysolve(k);
+cout << endl;
+cout << "For December....\n";
+daysolve(l);
+cout << endl;
+return 0;
+}
