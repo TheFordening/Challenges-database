@@ -1,0 +1,40 @@
+// ConsoleApplication3.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include "pch.h"
+
+#include <iostream> 
+#include <cmath>
+#include <string>
+using namespace std;
+int main()
+{
+	int max;
+	int count = 1;
+	int inputs[1000];
+	for (int i = 0; i <= 1000; i++)
+	{
+		cout << "Please enter a value.\n";
+		cin >> inputs[i];
+		if (i == 0)
+		{
+			max = inputs[0];
+		}
+		if (inputs[i] == 0)
+		{
+			break;
+		}
+		if (inputs[i] > max)
+		{
+			max = inputs[i];
+			count = 1;
+		}
+		if (inputs[i] == max)
+		{
+			count++;
+		}
+	}
+	cout << "The maximum number is..." << " " << max << endl;
+	cout << "This number appeared...." << "  " << count - 1 << " times";
+	return 0;
+}
