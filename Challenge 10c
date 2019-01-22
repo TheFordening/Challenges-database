@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+int main()
+{
+	double numberstorage[10];
+	double meanbyten = 0; // this is before the sum is divided by 10 to give the mean
+	double mean;
+	double deviation_help = 0;
+	double mean_squared;
+	double output;
+	double output_squared;
+	for (int i = 0; i <= 9; i++)
+	{
+		cout << "Please enter a number.\n";
+		cin >> numberstorage[i];
+	}
+	for (int z = 0; z <= 9; z++)
+	{
+		meanbyten += numberstorage[z];
+	}
+	mean = meanbyten / 10;
+	cout << "The mean is..." << " " << mean << endl;
+	for (int x = 0; x <= 9; x++)
+	{
+		deviation_help += pow(numberstorage[x], 2);
+	}
+	mean_squared = (meanbyten * meanbyten)/10;
+	output_squared = (deviation_help - mean_squared) / 9;
+	output = sqrt(output_squared);
+	cout << " The standard deviation is..." << " " << output << endl;
+	return 0;
+}
