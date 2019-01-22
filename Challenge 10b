@@ -1,0 +1,39 @@
+#include "pch.h"
+
+#include <iostream> 
+#include <cmath>
+#include <string>
+using namespace std;
+int main()
+{
+	int width = 200;
+	int length = 100;
+	int maxleft = 100; // from the center of the rectangle - same for the other variables below.
+	int maxright = 100;
+	double maxUP = 50;
+	int maxDown = 50;
+	double Xcoordinate;
+	int Ycoordinate;
+	int i = 0;
+	float answer; //the answer is most likely going to be a decimal number, therefore a float is needed.
+	double numeratorforprobability = 0; // This is used to sum the amount of times the points land inside a odd region
+	for (i; i<=1000000;i++) //1000000 attempts as specified
+	{
+		Xcoordinate = rand() % 201; // Random values from 0 to 200 - for probabilty
+		Ycoordinate = rand() % 101; // Random values from 0 to 100 - for probabilty
+		if (Xcoordinate < 100)
+		{
+			numeratorforprobability++;
+		}
+		if (Xcoordinate > 100 && Ycoordinate > 50)
+		{
+			if (Ycoordinate <= maxUP - (0.5 * Xcoordinate))
+			{
+				numeratorforprobability++;
+			}
+		}
+	}
+	answer = (numeratorforprobability / 1000000);
+	cout << "The probabilty is..." << answer;
+	return 0;
+}
