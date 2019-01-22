@@ -7,15 +7,13 @@ using namespace std;
 int main()
 {
 	int width = 200;
-	int length = 100;
+	double length = 100;
 	int maxleft = 100; // from the center of the rectangle - same for the other variables below.
 	int maxright = 100;
-	double maxUP = 50;
-	int maxDown = 50;
 	double Xcoordinate;
-	int Ycoordinate;
+	double Ycoordinate;
 	int i = 0;
-	float answer; //the answer is most likely going to be a decimal number, therefore a float is needed.
+	double answer; //the answer is most likely going to be a decimal number, therefore a float is needed.
 	double numeratorforprobability = 0; // This is used to sum the amount of times the points land inside a odd region
 	for (i; i<=1000000;i++) //1000000 attempts as specified
 	{
@@ -27,7 +25,7 @@ int main()
 		}
 		if (Xcoordinate > 100 && Ycoordinate > 50)
 		{
-			if (Ycoordinate <= maxUP - (0.5 * Xcoordinate))
+			if (Ycoordinate <= length - (0.5 * Xcoordinate))
 			{
 				numeratorforprobability++;
 			}
