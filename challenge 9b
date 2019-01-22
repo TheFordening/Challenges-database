@@ -1,0 +1,57 @@
+#include "pch.h"
+
+#include <iostream> 
+#include <cmath>
+#include <string>
+using namespace std;
+int main()
+{
+	int user_input;
+	int computer_value;
+	int increment = 0;
+		
+		while (increment < 2)
+		{
+			cout << "Please enter a number from 0-2 with 0 being scizor, 1 being rock and 2 being paper.\n";
+			cin >> user_input;
+			computer_value = rand() % 3;
+			if (user_input == computer_value)
+			{
+				cout << "Its a draw!!.\n";
+				cout << "The computer drew..." << computer_value << endl;
+			}
+			if (user_input == 0 && computer_value == 1)
+			{
+				cout << "The computer wins.\n";
+				cout << "The computer drew..." << computer_value << endl;
+			}
+			if (computer_value == 0 && user_input == 1)
+			{
+				cout << "You win!.\n";
+				cout << "The computer drew..." << computer_value << endl;
+				increment += 1;
+			}
+			if (computer_value == 1 && user_input == 2)
+			{
+				cout << " You win!.\n";
+				cout << "The computer drew..." << computer_value << endl;
+				increment += 1;
+			}
+			if (user_input == 0 && computer_value == 2)
+			{
+				cout << "You win!\n";
+				cout << "The computer drew..." << computer_value << endl;
+				increment++;
+			}
+			else if ( computer_value == 2 && user_input == 1)
+			{
+				cout << " You lost !.\n";
+				cout << "The computer drew..." << computer_value << endl;
+			}
+			if (increment == 2)
+			{
+				break;
+			}
+		}
+	return 0;
+}
