@@ -1,0 +1,103 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <istream>
+#include <cstdlib>
+using namespace std;
+int main()
+{
+	int runtime = 0; // used to allow the while loop to go on infinitely until condinition is met
+	double randmnumbr1;
+	double randmnumbr2;
+	int randmnumbrforsubtraction;
+	int user_option;
+	double user_answer;
+	while (runtime < 1)
+	{
+		randmnumbr1 = (1 + rand() % 100); //psuedo randoms a number
+		randmnumbr2 = (1 + rand() % 100);
+		randmnumbrforsubtraction = 100 + rand() % 100;
+		cout << "Menu.\n";
+		cout << " 1. Addition.\n";
+		cout << " 2. Subtraction.\n";
+		cout << " 3. Multiplication.\n";
+		cout << " 4. Division.\n";
+		cout << " 5. Exit.\n";
+		cout << "Please enter your option.\n";
+		cin >> user_option;
+		if (user_option == 5) // used to stop program when the user enters 5
+		{
+			cout << "Exiting....";
+			break;
+		}
+		switch (user_option) // used to process all the inputs a user may choose.
+		{
+			case(1):
+				cout << "Addition.\n";
+				cout << "What is ....\n";
+				cout << randmnumbr1 << " + " << randmnumbr2;
+				cin >> user_answer;
+				cout << "\n";
+				if (user_answer == randmnumbr1 + randmnumbr2) // checks to see whether or not the user entered the correct answer
+				{
+					cout << "Youre right.\n";
+					continue;
+				}
+				else
+				{
+					cout << "You're wrong."<< "The right answer is..."<< randmnumbr1 + randmnumbr2 <<"\n";
+					continue;
+				}
+			break;
+			case(2):
+				cout << "Subtraction.\n";
+				cout << "What is ....\n";
+				cout << randmnumbrforsubtraction << " - " << randmnumbr2<<".\n";
+				cin >> user_answer;
+				if (user_answer == randmnumbrforsubtraction - randmnumbr2)
+				{
+					cout << "Youre right.\n";
+					continue;
+				}
+				else
+				{
+					cout << "You're wrong."<<"The right answer is..."<< randmnumbrforsubtraction - randmnumbr2 <<"\n";
+					continue;
+				}
+			break;
+			case(3):
+				cout << "Multiplication.\n";
+				cout << "What is ....\n";
+				cout << randmnumbr1 << " * " << randmnumbr2 << ".\n";
+				cin >> user_answer;
+				if (user_answer == randmnumbr1 * randmnumbr2)
+				{
+					cout << "Youre right.\n";
+					continue;
+				}
+				else
+				{
+					cout << "You're wrong." << "The right answer is..." << randmnumbr1 * randmnumbr2 << "\n";
+					continue;
+				}
+			break;
+			case(4):
+				cout << "Division.\n";
+				cout << "What is ....\n";
+				cout << randmnumbr1 << " / " << randmnumbr2 << ".\n";
+				cin >> user_answer;
+				if (user_answer == randmnumbr1 / randmnumbr2)
+				{
+					cout << "Youre right.\n";
+					continue;
+				}
+				else
+				{
+					cout << "You're wrong." << "The right answer is..." << randmnumbr1 / randmnumbr2 << "\n";
+					continue;
+				}
+			break;
+		}
+	}
+}
