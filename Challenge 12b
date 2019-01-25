@@ -1,0 +1,43 @@
+#include "pch.h"
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <istream>
+#include <cstdlib>
+#include <ctype.h>
+void twitchprime()
+{
+	int storage[1000];
+	int  N = 1000;
+	for (int i = 2; N > 0; ++i)
+	{
+		bool  isPrime = true;
+		bool isTwinPrime = true;
+		for (int j = 2; j < i; ++j)
+		{
+			if (i  %  j == 0)
+			{
+				isPrime = false;
+				break;
+			}
+			if ((i + 2) % j == 0)
+			{
+				isTwinPrime = false;
+				break;
+			}
+		}
+		if ((isPrime) == 1 && (isTwinPrime == 1) && ((i + 2) != 4))
+		{
+			--N;
+			storage[i-2] = i;
+			storage[i-1] = i + 2;
+			std::cout << "( " << storage[i - 2] << " , " << storage[i - 1] << " )\n"; //outputs the pair of prime twin numbers
+		}
+	}
+}
+int main()
+{
+	twitchprime();
+	return 0;
+}
