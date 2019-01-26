@@ -1,0 +1,67 @@
+
+
+#include <iostream>
+
+#include <cmath>
+
+
+
+
+
+using namespace std;
+
+
+
+
+
+
+
+int main()
+{
+    int h;
+    int answer;
+    int dayofmonth;
+    int month;
+    int year;
+    double century;
+    double yearofcentury;
+    cout << " Enter the year.\n";
+    cin>> year;
+    cout << " Enter a month. Januray and Feburay are the 13th and 14th month of the previous year, April starts at 3.\n";
+    cin >> month;
+    cout << " Enter a day, using the 0 to 6 system with saturday being 0 and Sunday being 6\n";
+    cin >> dayofmonth;
+    century = year/100;
+    yearofcentury = year%100;
+    h = ((dayofmonth + ((26*(month + 1))/10) + yearofcentury + (yearofcentury/4) + (century/4)+(5*century)));
+    answer = h%7;
+    switch (answer)
+    {
+    case 0:
+        cout << "Today is Saturday"<< endl;
+        break;
+    case 1:
+        cout << "Today is Sunday.\n";
+        break;
+    case 2:
+        cout << "Today is Monday.\n";
+        break;
+    case 3:
+        cout << "Today is Tuesday.\n";
+        break;
+    case 4:
+        cout << "Today is Wednesday.\n";
+        break;
+    case 5:
+        cout << "Today is Thursday.\n";
+        break;
+    case 6:
+        cout << "Today is Friday.\n";
+        break;
+    default:
+        cout<< "You may have made an error, please reenter your info.\n";
+    }
+    return 0;
+    // % operand cannot be used unless its two integers, switch paramater must be an integer.//
+
+}

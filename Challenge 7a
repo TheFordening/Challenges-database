@@ -1,0 +1,21 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+int main()
+{
+    double x = 0 ;
+    int b;
+    for( int b = 10000; b<=100000; b+=10000)
+    {
+        for(double i=1;i<= b; i++)
+        {
+            x += (pow(-1,(i+1)))/(2*i - 1);
+            if ( i == b )
+            {
+                double y = 4*x;
+                std::cout << "The value of pi for..."<< b << " is "<< y/(b/10000) << ".\n";
+            }
+        }
+    }
+    return 0;
+}

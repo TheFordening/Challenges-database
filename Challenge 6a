@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+#include <string> // Enables .lenght, .compare( used like stringname.compare(string 1, string 2...),
+using namespace std;
+
+//add iomanip library to change widht of text
+int increment(int years)
+{
+    return 10000 * pow(1.05,years);
+}
+int main()
+{
+    int tuition_summer;
+    int years;
+    int total_years;
+    int total_tuition;
+    int helper;
+    int x;
+    cout<<"Please eneter how many years your are in college for.\n";
+    cin>>years;
+    cout<<"Your tuition in..."<<years <<" years is "<<increment(years)<<endl;
+    cout<< "How many years do you want to sum your tuition for?\n";
+    cin>> tuition_summer;
+    cout << "After how many years do you wish to start summing, i.e, you wish to sum 4 years worth of tuition AFTER x year, please enter the x.\n";
+    cin>> total_years;
+    x = total_years + 1;
+    total_tuition = increment(x);
+    for (int i=2;i<=tuition_summer;i++)
+    {
+        helper = increment(x);
+        total_tuition += helper;
+        x++;
+    }
+    cout << total_tuition ;
+    return 0;
+}

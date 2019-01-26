@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double sidea;
+    double sideb;
+    double sidec;
+    double perimeter;
+    double sumofpair;
+    cout<< "Please enter the lenght of side a.\n";
+    cin>>sidea;
+    cout<< "Please enter the lenght of side b.\n";
+    cin>>sideb;
+    cout<< "Please enter the lenght of side c.\n";
+    cin>>sidec;
+    sumofpair = sidea + sideb;
+    if ( sumofpair < sidec)
+    {
+        cout<< " The inputs are not valid, please reenter.\n";
+    }
+    else
+    {
+        perimeter = sidea + sideb + sidec;
+        cout<<"The perimeter is...\n";
+        cout<< perimeter;
+    }
+    return 0;
+// Important, don't place equations before the values for the equation have been inputted. Basically, dont put equations where you declare.//
+}

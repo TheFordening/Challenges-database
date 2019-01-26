@@ -1,0 +1,364 @@
+
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <istream>
+#include <cstdlib>
+#include <ctype.h>
+using namespace std;
+int main()
+{
+	string name_firstuser;
+	string name_seconduser;
+	int i = 0;
+	int position_rowuser1 = 0;
+	int position_columnuser1 = 0;
+	int position_rowuser2 = 0;
+	int position_columnuser2 = 0;
+    int exiter = 0;
+	char grids[4][4];
+	cout << "User X, the first user, can you enter your name.\n";
+	getline(cin, name_firstuser);
+	cout << "User O, the second user, please enter your name.\n";
+	getline(cin, name_seconduser);
+	while ( i < 1)
+	{
+		cout << name_firstuser << " Please choose the row and column on the grid in which you would like to place your X, there are 4 grids, but, you start counting from 0.\n";
+		cin >> position_rowuser1 >> position_columnuser1 ;
+		cout << name_seconduser << " Please choose the row on the grid in which you would like to place your X, there are 4 grids, but, you start counting from 0.\n";
+		cin >> position_rowuser2 >> position_columnuser2;
+		if (grids[position_rowuser1][position_columnuser1] == 'O' || grids[position_rowuser1][position_columnuser1] == 'X')
+		{
+			cout << " A user has already played here, please choose another position. You will both be required to reenter your positions.\n";
+			continue;
+		}
+		if (grids[position_rowuser2][position_columnuser2] == 'O' || grids[position_rowuser2][position_columnuser2] == 'X')
+		{
+			cout << " A user has already played here, please choose another position. You will both be required to reenter your positions.\n";
+			continue;
+		}
+		else
+		{
+			grids[position_rowuser1][position_columnuser1] = 'X';
+			grids[position_rowuser2][position_columnuser2] = 'O';
+			exiter++;
+		}
+		if ((grids[0][0] == 'X'))
+		{
+		    if ((grids[0][0] == grids[0][1]) && (grids[0][0] == grids[0][3]) && (grids[0][0] == grids[0][2]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][0] == 'X'))
+		{
+		    if ((grids[0][0] == grids[1][0]) && (grids[0][0] == grids[2][0]) && (grids[0][0] == grids[3][0]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[1][0] == 'X'))
+		{
+		    if ((grids[1][0] == grids[1][1]) && (grids[1][0] == grids[1][2]) && (grids[1][0] == grids[1][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[2][0] == 'X'))
+		{
+		    if ((grids[2][0] == grids[2][1]) && (grids[2][0] == grids[2][2]) && (grids[2][0] == grids[2][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[3][0] == 'X'))
+		{
+		    if ((grids[3][0] == grids[3][1]) && (grids[3][0] == grids[3][2]) && (grids[3][0] == grids[3][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][1] == 'X'))
+		{
+		    if ((grids[0][1] == grids[1][1]) && (grids[0][1] == grids[2][1]) && (grids[0][1] == grids[3][1]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][2] == 'X'))
+		{
+		    if ((grids[0][2] == grids[1][2]) && (grids[0][2] == grids[2][2]) && (grids[0][2] == grids[3][2]))
+            {
+                cout <<name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][3] == 'X'))
+		{
+		    if ((grids[0][3] == grids[1][3]) && (grids[0][3] == grids[2][3]) && (grids[0][3] == grids[3][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][0] == 'X'))
+		{
+		    if ((grids[0][0] == grids[1][1]) && (grids[0][0] == grids[2][2]) && (grids[0][0] == grids[3][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[3][0] == 'X'))
+		{
+		    if ((grids[3][0] == grids[2][1]) && (grids[3][0] == grids[1][2]) && (grids[3][0] == grids[0][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+        if ((grids[0][0] == 'X'))
+        {
+            if ((grids[0][0] == grids[0][1]) && (grids[0][0] == grids[0][2]) && (grids[0][0] == grids[0][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+        }
+
+		if ((grids[0][0] == 'X'))
+		{
+		    if ((grids[0][0] == grids[1][0]) && (grids[0][0] == grids[2][0]) && (grids[0][0] == grids[3][0]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[1][0] == 'X'))
+		{
+		    if ((grids[1][0] == grids[1][1]) && (grids[1][0] == grids[1][2]) && (grids[1][0] == grids[1][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[2][0] == 'X'))
+		{
+		    if ((grids[2][0] == grids[2][1]) && (grids[2][0] == grids[2][2]) && (grids[2][0] == grids[2][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[3][0] == 'X'))
+		{
+		    if ((grids[3][0] == grids[3][1]) && (grids[3][0] == grids[3][2]) && (grids[3][0] == grids[3][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][1] == 'X'))
+		{
+		    if ((grids[0][1] == grids[1][1]) && (grids[0][1] == grids[2][1]) && (grids[0][1] == grids[3][1]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][2] == 'X'))
+		{
+		    if ((grids[0][2] == grids[1][2]) && (grids[0][2] == grids[2][2]) && (grids[0][2] == grids[3][2]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][3] == 'X'))
+		{
+		    if ((grids[0][3] == grids[1][3]) && (grids[0][3] == grids[2][3]) && (grids[0][3] == grids[3][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][0] == 'X'))
+		{
+		    if ((grids[0][0] == grids[1][1]) && (grids[0][0] == grids[2][2]) && (grids[0][0] == grids[3][3]))
+            {
+                cout << name_firstuser << " has won!!";
+                break;
+            }
+		}
+		// User two condition for a win
+        if ((grids[0][0] == 'O'))
+		{
+		    if ((grids[0][0] == grids[0][1]) && (grids[0][0] == grids[0][3]) && (grids[0][0] == grids[0][2]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][0] == 'O'))
+		{
+		    if ((grids[0][0] == grids[1][0]) && (grids[0][0] == grids[2][0]) && (grids[0][0] == grids[3][0]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[1][0] == 'O'))
+		{
+		    if ((grids[1][0] == grids[1][1]) && (grids[1][0] == grids[1][2]) && (grids[1][0] == grids[1][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[2][0] == 'O'))
+		{
+		    if ((grids[2][0] == grids[2][1]) && (grids[2][0] == grids[2][2]) && (grids[2][0] == grids[2][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[3][0] == 'O'))
+		{
+		    if ((grids[3][0] == grids[3][1]) && (grids[3][0] == grids[3][2]) && (grids[3][0] == grids[3][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][1] == 'O'))
+		{
+		    if ((grids[0][1] == grids[1][1]) && (grids[0][1] == grids[2][1]) && (grids[0][1] == grids[3][1]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][2] == 'O'))
+		{
+		    if ((grids[0][2] == grids[1][2]) && (grids[0][2] == grids[2][2]) && (grids[0][2] == grids[3][2]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][3] == 'O'))
+		{
+		    if ((grids[0][3] == grids[1][3]) && (grids[0][3] == grids[2][3]) && (grids[0][3] == grids[3][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][0] == 'O'))
+		{
+		    if ((grids[0][0] == grids[1][1]) && (grids[0][0] == grids[2][2]) && (grids[0][0] == grids[3][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[3][0] == 'O'))
+		{
+		    if ((grids[3][0] == grids[2][1]) && (grids[3][0] == grids[1][2]) && (grids[3][0] == grids[0][3]))
+            {
+                cout <<name_seconduser << " has won!!";
+                break;
+            }
+		}
+        if ((grids[0][0] == 'O'))
+        {
+            if ((grids[0][0] == grids[0][1]) && (grids[0][0] == grids[0][2]) && (grids[0][0] == grids[0][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+        }
+
+		if ((grids[0][0] == 'O'))
+		{
+		    if ((grids[0][0] == grids[1][0]) && (grids[0][0] == grids[2][0]) && (grids[0][0] == grids[3][0]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[1][0] == 'O'))
+		{
+		    if ((grids[1][0] == grids[1][1]) && (grids[1][0] == grids[1][2]) && (grids[1][0] == grids[1][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[2][0] == 'O'))
+		{
+		    if ((grids[2][0] == grids[2][1]) && (grids[2][0] == grids[2][2]) && (grids[2][0] == grids[2][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[3][0] == 'O'))
+		{
+		    if ((grids[3][0] == grids[3][1]) && (grids[3][0] == grids[3][2]) && (grids[3][0] == grids[3][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][1] == 'O'))
+		{
+		    if ((grids[0][1] == grids[1][1]) && (grids[0][1] == grids[2][1]) && (grids[0][1] == grids[3][1]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][2] == 'O'))
+		{
+		    if ((grids[0][2] == grids[1][2]) && (grids[0][2] == grids[2][2]) && (grids[0][2] == grids[3][2]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][3] == 'O'))
+		{
+		    if ((grids[0][3] == grids[1][3]) && (grids[0][3] == grids[2][3]) && (grids[0][3] == grids[3][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		if ((grids[0][0] == 'O'))
+		{
+		    if ((grids[0][0] == grids[1][1]) && (grids[0][0] == grids[2][2]) && (grids[0][0] == grids[3][3]))
+            {
+                cout << name_seconduser << " has won!!";
+                break;
+            }
+		}
+		else
+        {
+            continue;
+        }
+        if (exiter == 8)
+        {
+            break;
+        }
+	}
+	return 0;
+}

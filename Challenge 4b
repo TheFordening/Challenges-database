@@ -1,0 +1,120 @@
+
+
+#include <iostream>
+
+#include <cmath>
+
+
+
+
+
+using namespace std;
+
+
+
+
+
+
+
+int main()
+
+
+
+{
+
+    double pointX;
+
+    double pointX2;
+
+    double pointY2;
+
+    double pointY;
+
+    double width ;
+
+    double height;
+
+    double height2;
+
+    double width2;
+
+    double distance;
+
+    double x;
+
+    double y;
+
+    double x2;
+
+    double y2;
+
+    cout<<"Please enter the X coordinate, for rectangle 1.\n";
+
+    cin>>pointX;
+
+    cout<<"Please enter the X coordinate, for rectangle 2.\n";
+
+    cin>>pointX2;
+
+    cout<<"Please enter the Y coordinate, for rectangle 1\n";
+
+    cin>>pointY;
+
+    cout<<"Please enter the Y coordinate, for rectangle 2.\n";
+
+    cin>>pointY2;
+
+    cout<<"Please enter the width for rectangle 1.\n";
+
+    cin>>width;
+
+    cout<<"Please enter the width for rectangle 2.\n";
+
+    cin>>width2;
+
+    cout<<"Please enter the height for rectangle 1.\n";
+
+    cin>>height;
+
+    cout<<"Please enter the height for rectangle 2.\n";
+
+    cin>>height2;
+
+    distance = sqrt(pow((pointX - pointX2),2) + pow((pointY - pointY2),2));
+
+    x = width + width2;
+
+    y = height+height2;
+
+    x2 = (width - width2);
+
+    y2 = (height - height2);
+
+    if (distance > x|| distance > y)
+
+    {
+
+        cout<<" They do not overlap";
+
+    }
+
+    else if ((distance < x2 || distance < y2)&&((width > width2 )&&(height > height2)))
+
+    {
+
+        cout<<" Rectangle 2 is inside rectangle 1.\n";
+
+    }
+
+    else
+
+    {
+
+        cout<<" Rectangle 2 overlaps rectangel 1.\n";
+
+    }
+
+
+    return 0;
+
+}

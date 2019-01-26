@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int month=6;
+    double savings;
+    double annualinterest;
+    double multiplier = (1 + (annualinterest/1200));
+    double accountvalue;
+    double rndm;
+    double rndm2;
+    double rndm3;
+    double rndm4;
+    double rndm5;
+    cout << " Please enter the amount you save each month.\n";
+    cin >>savings;
+    cout << " Please enter the annual interest you negotiated.\n";
+    cin>>annualinterest;
+    rndm = savings * multiplier;
+    rndm2 = (savings + rndm)*multiplier;
+    rndm3 = (savings + rndm2)*multiplier;
+    rndm4 = (savings + rndm3)*multiplier;
+    rndm5 = (savings + rndm4)*multiplier;
+    accountvalue = (savings + rndm5)*multiplier;
+    cout << " Your account value after the 6th month is...\n";
+    cout << accountvalue;
+    return 0;
+
+}

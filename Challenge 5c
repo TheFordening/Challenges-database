@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+int checksum (int q, int p, int n, int l, int j, int h, int f, int d, int b)
+{
+    int x;
+    x = (q*1 + p*2 + n*3 + l*4 + j*5 + h*6 + f*7 + d*8 + b*9)%11;
+    return x;
+}
+int main()
+{
+    int a, b,d,f,h,j,l,n,p,q;
+
+    cout<< "Please enter your first 9 digits of you ISBN.\n";
+    cin >> a ;
+    b = a % 10; // 9
+    d = (a/10) % 10; // 8
+    f = (((a/10)/10)) % 10; // 7
+    h = (((a/100)/10)) % 10; // 6
+    j = (((a/100)/100)) % 10; // 5
+    l = (((a/100)/100/10)) % 10; // 4
+    n = (((a/100)/100/100)) % 10; // 3
+    p = (((a/100)/100/100/10)) % 10; // 2
+    q = (((a/100)/100/100/100)) / 10; // 1
+    if (checksum(q,p,n,l,j,h,f,d,b) == 10 )
+    {
+        cout<<"Your isbn number is...\n";
+        cout << q<<p<<n<<l<<j<<h<<f<<d <<b << "X"<<endl;
+        cout << (((a/10)/10)) % 10; // 7
+        return 0;
+    }
+    else
+    {
+        cout<<" Your isbn number is ...\n";
+        cout << q<<p<<n<<l<<j<<h<<f<<d <<b << checksum(q,p,n,l,j,h,f,d,b);
+    }
+}
+

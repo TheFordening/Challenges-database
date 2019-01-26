@@ -1,0 +1,46 @@
+
+#include <iostream>
+#include <cmath>
+
+
+using namespace std;
+
+
+
+int main()
+
+{
+    double pointX;
+    double pointY;
+    int width = 10;
+    int height = 5;
+    double maxleftfromcenter;
+    double maxrightfromcenter;
+    float maxupfromcenter;
+    float maxdownfromcenter;
+    cout<<"Please enter the X coordinate.\n";
+    cin>>pointX;
+    cout<<"Please enter the Y coordinate.\n";
+    cin>>pointY;
+    maxleftfromcenter = -width/2;
+    maxrightfromcenter = width/2;
+    maxupfromcenter = height/2;
+    maxdownfromcenter = -height/2;
+    if (pointX<maxleftfromcenter||pointX>maxrightfromcenter)
+    {
+        cout<<" This point is outside the rectangle.\n";
+    }
+    else if (((pointX > maxleftfromcenter && pointX<maxrightfromcenter))&&((pointY<maxupfromcenter && pointY > maxdownfromcenter)))
+    {
+        cout<<" This point lies in the rectangle.\n";
+    }
+    else if (pointY<maxdownfromcenter||pointY>maxupfromcenter)
+    {
+        cout<<" This point is also outside the rectangle.\n";
+    }
+    else
+    {
+        cout<<"This point lies on the rectangle.\n";
+    }
+    return 0;
+}

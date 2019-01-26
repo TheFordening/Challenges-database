@@ -1,0 +1,43 @@
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main()
+{
+    double y;
+    double y2;
+    int x;
+    double c;
+    double c2;
+    double m;
+    double m2;
+    double trys;
+    double test;
+    cout<< " Please enter the Y - intercept for the first line.\n";
+    cin >> c;
+    cout<< "Please eneter the Y - intercept for the second line.\n";
+    cin >> c2;
+    cout<< " Please enter the gradient for the first line.\n";
+    cin >> m;
+    cout<< " Please enter the gradient for the second line.\n";
+    cin >> m2;
+    trys = pow(-(m - m2)/(c - c2),-1);
+    test = (m*x - m2*x)/(c - c2);
+    x = trys;
+    y = m*x + c;
+    if ( x == 0)
+    {
+        cout << " The lines are the same.\n";
+    }
+    else if (x > 999999 || x < -999999 )
+    {
+        cout << " The lines do not intersect.\n";
+    }
+    else
+    {
+        cout << " The lines intersect at the point...\n";
+        cout << x <<","<< y << endl;
+    }
+    return 0;
+        // % operand cannot be used unless its two integers, switch paramater must be an integer.//
+}

@@ -1,0 +1,90 @@
+
+#include <iostream>
+#include <cmath>
+
+
+using namespace std;
+
+
+
+int main()
+
+{
+
+    double pointX;
+
+    double pointY;
+
+    double pointX2;
+
+    double pointY2;
+
+    double radius1;
+
+    double radius2;
+
+    double distancebetweencenters;
+
+    int x;
+
+    int y;
+
+    cout<<"Please enter the X center coordinated for the first circle.\n";
+
+    cin>>pointX;
+
+    cout<<"Please enter the X center coordinated for the second circle.\n";
+
+    cin>>pointX2;
+
+    cout<<"Please enter the Y center coordinated for the first circle.\n";
+
+    cin>>pointY;
+
+    cout<<"Please enter the Y center coordinated for the second circle.\n";
+
+    cin>>pointY2;
+
+    cout<<"Please enter the radius for the first circle.\n";
+
+    cin>>radius1;
+
+    cout<<"Please enter the radius for the second circle.\n";
+
+    cin>>radius2;
+
+    distancebetweencenters = sqrt(pow((pointX - pointX2),2) + pow((pointY - pointY2),2));
+
+    x = sqrt((radius1 - radius2)*(radius1 - radius2));
+
+    y = (radius1 + radius2);
+
+    if (distancebetweencenters<=x)
+
+    {
+
+        cout<< "Circle 1 is inside circle 2.\n";
+
+    }
+
+    else if (distancebetweencenters <= y)
+
+    {
+
+        cout<< "Circle 1 is overlapped by circle 2.\n";
+
+    }
+
+    else
+
+    {
+
+        cout<<" The Circles are either the same, or do not overlap.\n";
+
+    }
+
+    return 0;
+
+
+
+}

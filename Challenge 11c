@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <istream>
+#include <cstdlib>
+#include <ctype.h>
+using namespace std;
+int main()
+{
+	string passwrd;
+	int runtime = 0;
+	while (runtime < 1) //when you have arguements that are relevant to the loop, usually place them inside the loop else you might run up on logical errors.
+	{
+		int numberofnondigits = 0; // used to indicate how many digits you have in the password, must be initialize inside the loop else logical error will occur
+		int numberofnonaplhanum = 0; //used to indicate the amount non aplha numetrics in the password, must be initialize inside the loop else logical error will occur
+		cout << "Please enter your password.\n";
+		getline(cin, passwrd);
+		if (passwrd.length() < 8)
+		{
+			cout << "invalid password.\n";
+			continue;
+		}
+		if (passwrd.length() >= 8)
+		{
+			for (int i = 0; i <= 7; i++)
+			{
+				if (isalnum(passwrd[i]) == 0) //checks to see if any element in the indexes of the string is a non alphanumetric
+				{
+					numberofnonaplhanum++;
+				}
+				if (isdigit(passwrd[i]) == 0) //checks to see if anyelement is a digit.
+				{
+					numberofnondigits++;
+				}
+			}
+			if (numberofnondigits > 6)
+			{
+				cout << "Password must have 2 or more numbers.\n";
+				continue;
+			}
+			if (numberofnonaplhanum > 0)
+			{
+				cout << "Password must only have alpha numertrics.\n";
+				continue;
+			}
+			if (numberofnondigits <= 6 && numberofnonaplhanum == 0)
+			{
+				cout << "Your password has been accepted.\n";
+				runtime++;
+			}
+		}
+	}
+	return 0;
+}

@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cmath>
+#include <string> // Enables .lenght, .compare( used like stringname.compare(string 1, string 2...),
+using namespace std;
+
+//add iomanip library to change widht of text
+int monthlycalc(int x,int y, double interest)
+{
+    double z = (x/y)/12;
+    double w = interest * (x/y);
+    double a = z + w;
+    return a;
+}
+int main()
+{
+    int loan_amount;
+    int loan_period;
+    int total_payment;
+    cout<< " Please enter the amount loan amount.\n";
+    cin>>loan_amount;
+    cout << " Please enter the loan period.\n";
+    cin >> loan_period;
+    double interest = 5;
+    while(interest <= 8 )  // a semicolon after a while/for loop's closing parenthesis will stop your program at that point.
+    {
+        cout <<"Your loan amount"<<"    "<<loan_amount<<endl;
+        cout << "Your loan period"<<"   "<<loan_period<<endl;
+        cout << "Your interest."<<"   "<<interest <<"%"<< endl;
+        double interest_decimals = interest/100;
+        cout << "Your monthly installment"<<"   "<<monthlycalc(loan_amount,loan_period,interest_decimals)<<endl; // Be careful with data types, i can easily mess up your output
+        total_payment = monthlycalc(loan_amount,loan_period,interest_decimals) * 12 * loan_period;
+        cout << "Your total payement for...."<<" an interest rate of..."<< interest <<" % is"<<" "<< total_payment <<endl << endl;
+        interest = interest + 0.125;
+
+    }
+    return 0;
+}

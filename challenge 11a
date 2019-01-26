@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <fstream>
+#include <istream>
+using namespace std;
+int main()
+{
+	ofstream Myfile2("countletters.txt");
+	Myfile2 << "Without code you dead!.\n";
+	Myfile2.close();
+	string line;
+	string linestorage;
+	ifstream Myfile("countletters.txt");
+	if (Myfile.is_open())
+	{
+		while (getline(Myfile, line))
+		{
+			cout << line << '\n';
+			linestorage = line;
+		}
+		Myfile.close();
+
+	}
+	else
+	{
+		cout << "It is not open.\n";
+	}
+	cout << '\n' << linestorage.length();
+}

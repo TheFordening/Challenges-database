@@ -1,0 +1,56 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int lotterynumber = 879;
+    int lotteryguess;
+    cout << "Please enter your 3 digit lottery number.\n";
+    cin>>lotteryguess;
+    int lotterydigit1 = lotterynumber%10;
+    int a = lotterynumber / 10;
+    int lotterydigit2 = a % 10;
+    int lotterydigit3 = a / 10;
+    int guessdigit1 = lotteryguess % 10;
+    int b = lotteryguess / 10;
+    int guessdigit2 = b % 10;
+    int guessdigit3 = b / 10;
+    if (lotteryguess==lotterynumber||(lotterydigit1==guessdigit1||lotterydigit1==guessdigit2||lotterydigit1==guessdigit3&&(lotterydigit2==guessdigit2||lotterydigit2==guessdigit1||lotterydigit2==guessdigit3)&&(lotterydigit3==guessdigit1||lotterydigit3==guessdigit2||lotterydigit3==guessdigit3)&&lotterynumber!=lotteryguess))
+    {
+    switch (lotteryguess)
+    {
+        case (879):
+            cout<< "Congratulation!!, you won got the exact lottery numbers, in the exact order!!.\n";
+            cout<< " You have been awarded a total $10000, please go to your nearest CaseyFordetm lottery machine to collect your funds!.\n";
+        break;
+        case (789):
+            cout<< "Congratulation!!, you won got the exact lottery numbers, unfortunately the order is wrong.\n";
+            cout<< "You have been awarded a total $3000, please go to your nearest CaseyFordetm lottery machine to collect your funds!.\n";
+        break;
+        case (978):
+            cout<< "Congratulation!!, you won got the exact lottery numbers, unfortunately the order is wrong.\n";
+            cout<< "You have been awarded a total $3000, please go to your nearest CaseyFordetm lottery machine to collect your funds!.\n";
+        break;
+        case(897):
+            cout<< "Congratulation!!, you won got the exact lottery numbers, unfortunately the order is wrong.\n";
+            cout<< "You have been awarded a total $3000, please go to your nearest CaseyFordetm lottery machine to collect your funds!.\n";
+        break;
+        case(798):
+            cout<< "Congratulation!!, you won got the exact lottery numbers, unfortunately the order is wrong.\n";
+            cout<< "You have been awarded a total $3000, please go to your nearest CaseyFordetm lottery machine to collect your funds!.\n";
+        break;
+        case(987):
+            cout<< "Congratulation!!, you won got the exact lottery numbers, unfortunately the order is wrong.\n";
+            cout<< "You have been awarded a total $3000, please go to your nearest CaseyFordetm lottery machine to collect your funds!.\n";
+        break;
+    }
+    }
+
+    else if (lotterydigit1 == guessdigit1||lotterydigit1 == guessdigit2||lotterydigit1==guessdigit3||lotterydigit2==guessdigit1||lotterydigit2==guessdigit2||lotterydigit2==guessdigit3||lotterydigit3==guessdigit1||lotterydigit3==guessdigit2||lotterydigit3==guessdigit3)
+    {
+        cout<<" You have won $1000";
+    }
+    return 0;
+// If a problem requires you to work with the individual digits within a number, remember to use the % 10 and / 10 technique to extract the numbers//
+}
