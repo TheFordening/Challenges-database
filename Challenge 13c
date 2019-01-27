@@ -1,0 +1,62 @@
+/*Challenge 13 a
+!.Create a game of dice based on a casino game
+Input : None
+Process :
+1. Randomize numbers from: 1 - 6 for 2 dice.
+2. The sum of the two randomized dice rolls are taken
+3. If the sum of the rolls are 2, 3 or 12 - they win(scarps)
+4. If the sum is 7 or 11 - They lose (naturals)
+5. If the sum is any other number you get a point type (based on the number)
+6 .Game runs until they win or they get 2 points of the same type.
+Output : You win - Scraps; You lose - Naturals; You win - Points */
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+int dice1()
+{
+    srand(time(0));
+    return rand() % 6 + 1;
+}
+int dice2()
+{
+    srand(time(0));
+    return rand() % 6 + 1;
+}
+int summer(int a, int b) // utilizing this to help get the point system right
+{
+    return a+b;
+}
+int main()
+{
+    srand(time(0));
+    int sum = 0;
+    int rndm;
+    int i = 0;
+    int pointender = 0;
+    int dicerollsum;
+    int probability = 0;
+    while(i<10000)
+    {
+        dicerollsum = summer(dice1(),dice2());
+        if ( sum == dicerollsum)
+        {
+            probability++;
+        }
+        else if( (sum != dicerollsum) && (dicerollsum!= 7) && (dicerollsum != 11) && (dicerollsum!= 2) && (dicerollsum!= 3)&& (dicerollsum!= 12) )
+        {
+            sum = dicerollsum;
+        }
+        if (dicerollsum== 2 || dicerollsum == 3 || dicerollsum == 12)
+        {
+            probability++;
+            break;
+        }
+        if ( dicerollsum == 7 || dicerollsum == 11)
+        {
+            continue;
+        }
+        i++;
+    }
+    std::cout << "The numbers of games won are... " << probability;
+    return 0 ;
+}
