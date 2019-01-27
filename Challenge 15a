@@ -1,0 +1,161 @@
+/* Input - None required
+    Process - Use time(0); do calculations on the resulting number to get the amount of time passed since 00:00 January 1970
+                use that time get the number of days passed. Then, subtract 365 from the numbers of days passed untill the number of days
+                passed is less than 365; add one to year each time you subtract 365, if year is a leap year, add 366.
+                when number of days is less than 365 do a for each month,subtract the number of days until the number of days is less than a certain amount.(huge if statement that prevents te loop from
+                occuring if the numbers of days is too small)-(another if loop that sets days to 0 if it crosses a certain number - new month)
+                For hours,find the number of hours it would take to get to the year and day you current have.
+                Then subtract that from the total hours to get the hours passed since then.
+                Minutes similar to hours.
+    Output - date and time
+*/
+#include <iostream>
+#include <ctime>
+// Function that counts how many years since from the time(0) function and then adds those year to 1970
+int yearcounter()
+{
+    int year = 1970;
+    double days = (((time(0)/60)/60)/24); // Gets the time elapsed in days
+    while (days >= 366 ) //loop that removes a year from the days passed (365 days) until the days remaining are less that 365
+    {
+        if(days == 365) //Incase it is the first day of a new year
+        {
+            days = 1;
+        }
+        if (year % 4 == 0 ) //takes into consideration leap years
+        {
+            days -= 366;
+        }
+        else
+        {
+            days -= 365;
+        }
+        year++;
+    }
+    return(year);
+}
+int daycounter() //function that does the same thing as above but gets the number of days instead
+{
+    int year = 1970;
+    double days = (((time(0)/60)/60)/24);
+    while (days >= 366 )
+    {
+        if(days == 365)
+        {
+            days = 1;
+        }
+        if (year % 4 == 0 )
+        {
+            days -= 366;
+        }
+        else
+        {
+            days -= 365;
+        }
+        year++;
+    }
+    return (days+1);
+}
+int monthcounter(int x, int i) //function that outputs the month give the year and the days elapsed.
+{
+    if (x % 4 == 0)
+    {
+        if (i > 31 && i <= 60)
+        {
+            std::cout << "The month is Febuary.\n";
+        }
+    }
+    else
+    {
+        if ( i > 31 && i <= 59 ) //Febuary
+        {
+            i -= 31;
+            std::cout << "Febuary ";
+        }
+        if ( i > 59 && i <= 90  ) //March
+        {
+            i -= 59;
+            std::cout << "March ";
+        }
+        if ( i > 90 && i <= 120 ) // April
+        {
+            i -= 90;
+             std::cout << "April ";
+        }
+        if ( i > 120 && i <= 151 ) //May
+        {
+            i -= 120;
+            std::cout << "May ";
+        }
+        if ( i > 151 && i <= 181 ) //June
+        {
+            i -= 151;
+            std::cout << "June ";
+        }
+        if ( i > 181 && i <= 212 ) //July
+        {
+            i -= 181;
+            std::cout << "July ";
+        }
+        if ( i > 212 && i <= 243  ) //August
+        {
+            i -= 212;
+            std::cout << "August ";
+        }
+        if (  i > 243 && i <= 273  ) //Septembr
+        {
+            i -= 243;
+            std::cout << "September ";
+        }
+        if ( i > 273 && i <= 304  ) //October
+        {
+            i -= 273;
+            std::cout << "October ";
+        }
+        if ( i > 304 && i <= 334  ) //November
+        {
+            i -= 304;
+             std::cout << "November ";
+        }
+        if ( i > 334 && i <= 365  ) //Decemeber
+        {
+            i -= 334;
+            std::cout << "December ";
+        }
+        else
+        {
+             std::cout << "January ";
+        }
+    }
+    return i;
+}
+void minutecounter(int x) //fucntion that takes the amount of time in seconds passed since the current day and then outputs the hour minuts and seconds passed.
+{
+    int minutes_passed = 0;
+    int hours_passed = 0;
+    int time_in_seconds = (time(0) - (x*24*60*60));
+    while(time_in_seconds >= 60)
+    {
+        time_in_seconds -= 60;
+        minutes_passed++;
+    }
+    while (minutes_passed >=60)
+    {
+        minutes_passed -= 60;
+        hours_passed++;
+    }
+    while (hours_passed >= 12)
+    {
+        hours_passed -= 12;
+    }
+    std::cout << hours_passed << " : " << minutes_passed << " : " << time_in_seconds <<" ";
+}
+int main()
+{
+    int day = daycounter(); // variable day used to stored the daycounter return value.
+    int years = yearcounter();
+    std::cout << monthcounter(years,day) << " " << years << " ";
+    minutecounter(day);
+    std::cout<<" Time is in UTC which is 4 hours ahead of Trinidad time. ";
+    return 0;
+}
