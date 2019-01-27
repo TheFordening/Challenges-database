@@ -1,0 +1,61 @@
+/* Input - none
+Process - Use the mercenne formula to get all mercenne prime numbers
+Output - Mercenne prime numbers*/
+#include <iostream>
+#include <cmath>
+int mercennenumbers(int i) //function used to do the calculation of the mercenne numbers
+{
+    return (pow(2,i) - 1);
+}
+void primechecker(int x) // function used to test if the mercenne number is a prime number, also outputs the number if its prime
+{
+    int counter;
+    bool isPrime = true;
+    for (int j = 2; j < x ; j++)
+    {
+        if (x  %  j == 0)
+        {
+            isPrime = false;
+            break;
+        }
+        if(isPrime)
+        {
+            if (j ==(x-1)) //used to only output x if j is on its last iteration.
+            {
+                std::cout << x << std::endl;
+            }
+        }
+    }
+}
+int main()
+{
+    std::cout << " The mercenne prime numbers are if the form... \n\n";
+    std::cout << 'p'<< "    2^p - 1\n";
+    for(int p = 0; p<=31; p++) //loop used to call the prime checker fuction for different mercenne numbers
+    {
+        if(p == 2) // two is a prime number but it wont be seen as one by the for loop, this is to output 2
+        {
+            std::cout << '2' <<"     ";
+        }
+        for (int j = 2; j<p; j++) //loop used to only output prime numbers for p
+        {
+            if(p%j == 0)
+            {
+                break;
+            }
+            if(p==11 || p== 23 || p== 29) //removes these numbers from the output
+            {
+                break;
+            }
+            if(p % j != 0 )
+            {
+                if (j==(p-1))
+                {
+                    std::cout << p <<"     ";
+                }
+            }
+        }
+        primechecker(mercennenumbers(p)); //calls the primechecker function with mercenne numbers function as its parameter
+    }
+    return 0;
+}
