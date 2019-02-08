@@ -1,0 +1,34 @@
+#include "pch.h"
+#include <iostream>
+#include <cmath>
+int main()
+{
+	int cvalue[1000] = { 0 };
+	int avalue[1000] = { 0 };
+	int bvalue[1000] = { 0 };
+	for (int a = 1; a <= 500; a++)
+	{
+		for (int b = 1; b <= 500; b++)
+		{
+			for (int c = 500; c >= 1; c--)
+			{
+				if ((pow(a, 2) + pow(b, 2) < c))
+				{
+					c = pow((pow(a, 2) + pow(b, 2)), (1 / 2));
+				}
+				if (pow(a, 2) + pow(b, 2) == pow(c, 2))
+				{
+					avalue[a] = a;
+					bvalue[a] = b;
+					cvalue[a] = c;
+					if ((avalue[a] + bvalue[a] + cvalue[a]) == 1000)
+					{
+						std::cout << "The specific pythagorean triplet is " << avalue[a] << " " << bvalue[a] << " " << cvalue[a] << " Their product is: " << avalue[a] * bvalue[a] * cvalue[a];
+
+					}
+				}
+			}
+		}
+	}
+	return 0;
+}
