@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <algorithm>
+#include <cstdlib>
+int main()
+{
+	std::ofstream Mystream("C:\\Users\\casey\\source\\repos\\Project3\\data.txt");
+	for (int i = 0; i < 99; i++)
+	{
+		Mystream << rand() % 100 << "#";
+	}
+	Mystream.close();
+	std::string heh;
+	std::string everything;
+	int arr[100] = { 0 };
+	int i = 0;
+	std::ifstream Mystream2("C:\\Users\\casey\\source\\repos\\Project3\\data.txt");
+	while (Mystream2.good())
+	{
+		Mystream2 >> heh;
+		everything += heh;
+	}
+	for (int i = 0; i < (everything.length()); i++)
+	{
+		if (everything[i] == '#')
+		{
+			everything[i] = ' ';
+		}
+	}
+	Mystream2.close();
+	std::ofstream Mystream3("C:\\Users\\casey\\source\\repos\\Project3\\data.txt");
+	Mystream3 << everything;
+	Mystream3.close();
+	std::ifstream Mystreamlast("C:\\Users\\casey\\source\\repos\\Project3\\data.txt");
+	i = 0;
+	while (Mystreamlast.good())
+	{
+		Mystreamlast >> arr[i];
+		i++;
+	}
+	Mystreamlast.close();
+	int sum = 0;
+	int numberofelements = 0;
+	for (int a = 0; a < 100; a++)
+	{
+		sum += arr[a];
+		if (arr[a] != 0)
+		{
+			numberofelements++;
+		}
+	}
+	std::cout << "The sum is: " << sum << std::endl;
+	std::cout << "The average is: " << (double)sum / (double)numberofelements;
+	getchar();
+	getchar();
+	return 0;
+}
